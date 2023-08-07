@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-export const TaskAdd = ({ onSetTask, newTask, onClickAdd }) => {
+export const TaskAdd = ({ onClickAdd }) => {
 
-
+    const [newTask, setNewTask] = useState('');
     const onChangeAddTask = (event) => {
-        onSetTask(event.target.value)
+        setNewTask(event.target.value)
     }
 
 
@@ -22,7 +22,7 @@ export const TaskAdd = ({ onSetTask, newTask, onClickAdd }) => {
         <div class="mb-3 col-5">
             <button 
                 className='btn btn-success'
-                onClick={onClickAdd}
+                onClick={()=> {onClickAdd(newTask); setNewTask('')} }
             >AGREGAR
         </button>
         </div>

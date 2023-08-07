@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const TaskItem = ({ dataTaskItem }) => {
+export const TaskItem = ({ dataTaskItem, deleteTask }) => {
 
     const{ id, taskTitle} = dataTaskItem;
 
@@ -10,7 +10,10 @@ export const TaskItem = ({ dataTaskItem }) => {
             <div className="card-body">
                 <h5 className="card-title ">Tarea N°: { id }</h5>
                 <p className="card-text">{taskTitle }</p>
-                <button type='button' className="btn btn-sm btn-danger">
+                <button 
+                    type='button' 
+                    className="btn btn-sm btn-danger"
+                    onClick={() => deleteTask(id)}>
                     Eliminar
                 </button>
             </div>
